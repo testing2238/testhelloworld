@@ -1,4 +1,5 @@
-FROM eclipse-temurin:17-jdk-focal
+FROM ibm-semeru-runtimes:open-11-jre-focal
+#FROM eclipse-temurin:17-jdk-focal
 
 ADD webAPI-0.0.1-SNAPSHOT.jar webAPI-0.0.1-SNAPSHOT.jar
 
