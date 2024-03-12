@@ -1,5 +1,5 @@
-
-FROM eclipse-temurin:17-jdk-focal
+FROM java:8-jdk-alpine
+#FROM eclipse-temurin:17-jdk-focal
 
 ADD webAPI-0.0.1-SNAPSHOT.jar webAPI-0.0.1-SNAPSHOT.jar
 
