@@ -2,20 +2,20 @@
 #MAINTAINER iiswebMySQL
 #ADD . /app
 
-#FROM php:7.2-apache
-##MAINTAINER iiswebMYSQL
-#RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
-
-
 FROM php:7.2-apache
-#MAINTAINER iiswebPGSQL
-RUN apt-get update && apt-get install -y apt-transport-https
-
-RUN apt-get install -y libpq-dev \
-    && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
-    && docker-php-ext-install pdo pdo_pgsql pgsql
-
+#MAINTAINER iiswebMYSQL
+RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 COPY . /var/www/html/
+
+#FROM php:7.2-apache
+##MAINTAINER iiswebPGSQL
+#RUN apt-get update && apt-get install -y apt-transport-https
+#
+#RUN apt-get install -y libpq-dev \
+#    && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
+#    && docker-php-ext-install pdo pdo_pgsql pgsql
+#COPY . /var/www/html/
+
 #CMD ["echo", "Welcome to Dockerfile"]
 EXPOSE 8443 8000
 
